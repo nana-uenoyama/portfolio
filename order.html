@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Nana のポートフォリオサイト</title>
+  <link rel="icon" href="img/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/order.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+ <header>
+        <div class="logo">
+              <h1><img src="img/logo.png" alt="logo" width="168" height="72"></h1>
+        </div>
+
+       <div class="pc-menu">
+                       <nav>
+                            <ul>
+                             <li><a href="index.html"><ruby>AboutME<rt>&nbsp;&nbsp;&nbsp;&nbsp;私について</rt></ruby></a></li>
+                              <li><a href="works.html"><ruby>WORKS<rt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品</rt></ruby></a></li>
+                              <li><a href="about.html"><ruby>HP<rt>&nbsp;&nbsp;&nbsp;&nbsp;制作HP</rt></ruby></a></li>
+                              <li><a href="order.html"><ruby>ORDER<rt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依頼予約</rt></ruby></a></li>
+                       </ul>
+                   </nav>
+        </div>
+       
+        <div class="sp-menu">
+              <span class="material-icons" id="open">menu</span>
+        </div>
+            
+        <div class="overlay">
+                <span class="material-icons" id="close">close</span>
+                   <nav>
+                        <ul>
+                             <li><a href="index.html"><ruby>AboutME<rt>&nbsp;&nbsp;&nbsp;&nbsp;私について</rt></ruby></a></li>
+                              <li><a href="works.html"><ruby>WORKS<rt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作品</rt></ruby></a></li>
+                              <li><a href="about.html"><ruby>HP<rt>&nbsp;&nbsp;&nbsp;&nbsp;制作HP</rt></ruby></a></li>
+                              <li><a href="order.html"><ruby>ORDER<rt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;依頼予約</rt></ruby></a></li>
+                       </ul>
+                   </nav>
+        </div>
+ </header>
+        <main>
+            <div class="top">
+                 <img src="img/profile.png" alt=" Nanaのアイコン画像です" id="trigger">
+                 <p>Nana</p>
+                 <p id="target">Webデザイナー見習いです。<br>日々の勉強、がんばっています。</p>
+               </div>
+       <div class="order">   
+            <h2>予約申込</h2>
+            <!--<caption>店舗情報の詳細</caption>-->
+            <form method="post" action="confirm.php">
+            <!--table-->
+                
+                <dl>
+                <div class="form-item">
+                <dt><label for="onamae">お名前</label></dt>
+                <dd><input type="text" name="name" required id="onamae">※必須</dd>
+                </div>
+                
+                <div class="form-item">
+                    <dt><label for="email">
+                        メールアドレス</label></dt>
+                    <dd><input type="email" name="mail" required id="email">※必須</dd>
+                    </div>
+                
+                <div class="form-item">
+                 <dt><label for="tel">電話</label></dt>
+                    <dd><input type="tell" name="tel" id=tel>※必須</dd>
+                    </div>
+                
+                <div class="form-item">
+                    <dt><label for="goyoyakubi">ご予約日</label></dt>
+                    <dd>令和03年2月
+                    <select name="hiniti" id="goyoyakubi">
+                    <option value="20">1</option>
+                    <option value="20">2</option>
+                    <option value="21">3</option>
+                    <option value="22">4</option>
+                    <option value="23">5</option>
+                    <option value="24"selected>6</option>
+                    <option value="25">7</option>
+                    <option value="20">8</option>
+                    <option value="21">9</option>
+                    <option value="22">10</option>
+                    <option value="23">11</option>
+                    <option value="24">12</option>
+                    <option value="25">13</option>
+                    <option value="20">14</option>
+                    <option value="21">15</option>
+                    <option value="22">16</option>
+                    <option value="23">17</option>
+                    <option value="24">18</option>
+                    <option value="25">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="22">26</option>
+                    <option value="23">27</option>
+                    <option value="24">28</option>
+                    <option value="25">29</option>
+              
+            </select>日<!--selectedで初期値を規定できる-->
+                    </dd> 
+                    </div>
+                
+                
+                <div class="form-item">
+                    <dt><label for="youbou">依頼内容</label></dt>
+                    <dd><textarea name="message" id="youbou"></textarea>
+                </dd>
+                </div>
+                </dl><!--ここで一回dlで定義が終わる-->
+            <br>                                        
+            <div class="submit">
+            <input type="submit" value="確認する">
+            <input type="reset" value="リセット">
+                </div>
+                </form>
+            </div>
+            </main>
+        
+       <footer>
+      <small>
+          (c)Nana design.com
+      </small>
+    
+<address>
+          <a href="#" a target="_blank">
+          <img src="img/icons-138.png" alt="インスタグラムアイコン"></a> 
+          
+          <a href="#" target="_blank">
+          <img src="img/icons8-%E3%83%84%E3%82%A4%E3%83%83%E3%82%BF%E3%83%BC-138.png" alt="twitterアイコン"></a>
+          <br>
+          icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          
+  </address>
+ 
+  </footer>
+  
+  <script src="js/main.js"></script>
+    
+  <script>
+    'use strict';
+
+    function process(){ document.getElementById('target').textContent = '少しでも早く一人前のデザイナーになりたい！';
+                        document.getElementById('trigger')
+                        classList.addEventListener('changed');
+    }
+    
+                        document.getElementById('trigger').addEventListener('click', process);
+</script>
+   </body>
+</html>

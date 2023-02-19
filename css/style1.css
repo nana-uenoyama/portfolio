@@ -1,0 +1,324 @@
+/*common*/
+* {box-sizing: border-box;}
+
+*body{margin: 0;padding:0;
+    font-family: 'Jua', sans-serif;
+}
+
+
+/*heart animation*/
+
+.like {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: pink;
+}
+
+.like [type="checkbox"] {
+  display: none;
+}
+
+.heart {
+  font-size: 40px;
+  color: #e4e4e4;
+  user-select: none;
+}
+
+.like [type="checkbox"]:checked ~ .heart {
+  animation-name: heart;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    color: red;
+  }
+}
+
+.ripple {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  background: red;
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+.like [type="checkbox"]:checked ~ .ripple {
+  animation-name: ripple;
+  animation-duration: .6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+.flexcard{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+.flexcard h2{
+    background-color:lightpink;
+    opacity: .5;
+	background-repeat:no-repeat;
+	background-position:center bottom;
+	background-size:220px 28px;
+}
+.flexcard section{
+    flex:0 0 auto;
+	box-shadow:0 0 10px 0 #ccc;
+	padding:20px 20px 40px;
+    width:100%;
+    margin:40px auto;;
+}
+
+.flexcard section img{width: 100%;}
+
+.flexcard section a{
+    display: inline-block; 
+    margin-top: 20px;
+    color: red;}
+
+
+h1,h2{margin: 0;
+   font-weight: normal;}
+
+p{margin: 0;}
+
+img{vertical-align: bottom;}
+
+.container{ margin: 0 16px;}
+
+ul{list-style: none;
+  padding: 0;
+  margin: 0;}
+
+a{text-decoration: none;
+  color: inherit;
+    transform: opacity .3s;}
+
+a:hover{opacity: .5;}
+
+/*header*/
+header{background-color:#eee;
+       padding: 8px 0;}
+
+header .container{display: flex;
+                  justify-content:space-between;
+                  align-items: center;}
+
+header ul{display: flex;}
+
+header ul li{margin: 8px;}
+
+header ul li a{display: flex;
+                flex-direction: column-reverse;
+                font-size:12px;
+                text-align: center;}
+
+header ul li a i{font-size:24px;}
+
+/*hero*/
+  .hero img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;}
+
+    
+/*products*/
+.products{
+  padding: 80px 0;
+}
+
+.products ul{
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:16px;
+}
+
+.products li{width: calc((100% - 16px) / 2);}
+
+.products li img{width: 100%;}
+
+.products li h2{
+    font-size: 16px;
+    margin-top:8px; }
+
+  .products .more{
+    display: block;
+    width: 70%;
+    line-height: 48px;
+    text-align: center;
+    border: 2px solid #333;
+    margin: 32px auto 0;
+  }
+
+/*footer*/
+footer{background: #4c4948;
+       padding: 16 0;
+       color: #eee;}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer small{font-size:16px;}
+
+footer ul{display: flex;}
+
+footer li i{font-size: 24px;}
+
+footer li + li{margin-left: 8px;}
+
+/*-------------------------------------map-----------------------------------------*/
+/*メインデバイス用の表の編集用タグ入力スタート*/
+
+main{  margin: 64px auto;}
+
+main h2{margin: 0 32px 48px;
+        font-size: 24px;
+        text-align: center;}
+
+table{border:solid 4px #C08A9B;
+      border-collapse: collapse;/*線の単線化collapse*/
+      width:100%;/*tableを広げる＝divの幅と同じ割合になる*/
+      margin:20px auto;}
+
+
+th,td{border: solid 2px #eeeeee;}
+
+th{background-color:#F5C3C2;
+color: #ffffff;
+width: 20%
+}
+
+td{padding: 5px 0;}
+
+tr:nth-child(odd/*even,2n+1でもおっけ*/){background:#eeeeee}
+/*表の編集タグ終了*/
+
+iframe {width: 100%;
+        aspect-ratio:16/9; /*アスペクト比（縦横比）を指定*/}
+
+/*問い合わせページ*/
+/*フォームのスタイル設定*/
+form{width:90%;
+max-width:640px;
+margin:0 auto;}
+
+dl{width:100%;
+margin: :0 auto;}
+
+.form-item{display:flex;
+justify-content:center;
+/*flexの時のみ使用できる*/
+margin-bottom: 40px;
+z-index: 100;}
+
+dt{width:200px;}
+
+dt::before{content: "●";
+       color: #c2e08f;
+       padding-right: 6px;}
+
+dd{width:300px;margin-left:0;}
+
+input[type="text"],input[type="email"],input[type="tel"],
+textarea{display: block;
+     width: 100%;
+     font-size:16px;}
+
+select{width: 28%;/*ddの300pxのうちの28%*/
+font-size:16px;}
+
+.form-submit{text-align: center;}
+
+
+input[type="submit"]
+ {background-color:#c2e08f;
+  color: #ffffff;
+  width: 200px;
+  padding: 0.5em;/*em標準文字の高さをエムと表す。OSによって違う*/
+  border: none;
+  border-radius: 4px;}
+
+input[type="submit"]:hover{
+background-color: green;}
+
+
+
+
+
+
+
+
+/*-----------------------------------------midium screen-----------------------------------------*/
+@media (min-width:600px){
+    
+    
+.flexcard section{width:40%;
+}
+
+    
+    .products li{width: calc((100% - 32px) / 3);}
+
+    td{padding: 10px 20px;}/*スマホの時は電話かけたりしやすいようにスペースをパディング１０くらいとっておく。明確にわかりやすく押しやすく！*/
+      
+      
+  /*メニューのページのフレックス終わり*/
+      /*TOPページのフレックス再開*/
+      
+      /*よやくふぉ-むの設定スタ-と*/
+      
+      form{padding: 20px 0;}
+      dl{width: 90%;}/*147のが引き継がれてる*/
+      .form-item{display:block:}
+      /*2段枠組みの設定に性質を変えてくださいって意味メインデバイスでは149.150フレックス＝横並び設定になってる*/
+      
+      dt{width: 100%;margin-bottom: 10px;}
+      
+      dd{width: 100%;}
+      
+      input[type="submit"]{padding:1em;}
+   
+    main{margin: 0 32px;}
+
+  }
+    
+/*------------------------------------------large screen------------------------------------------*/
+@media (min-width:800px){
+                            
+.container{width: calc(100%-32px);
+            margin: 0 auto;
+            max-width: 800px;}
+
+main{  margin: 64px 64px;}
+    
+.map iframe,table{margin: 0 auto;
+                  max-width: 800px;}}

@@ -1,0 +1,206 @@
+@charset "utf-8";
+/*↓全称セレクタで余白リセット*/
+*{margin:0;padding:0;}
+/*↑ここまで*/
+
+/*WORKSのページ*/
+
+/*----------------------------------------------------------*/
+ body{background-image:url(../img/back.jpg);
+             background-repeat: repeat; 
+             text-align: center;}
+
+#works {padding: 0 32px;
+        text-align: center;}
+
+#works section{width: 100%;}
+
+#works img {width: 100%;}
+
+article + article{margin-top: 32px;}
+
+article:nth-last-child(even){
+    flex-direction: row-reverse;
+}
+
+article {box-shadow:0 0 20px 0 antiquewhite;
+         margin-bottom: 72px;
+         display: flex;
+         gap: 16px;
+         align-items:center;
+         padding: 32px;
+}  
+
+#banner img{padding-left: 64px;}
+
+
+.neum1{border-radius: 50px;
+    padding: 4px;
+    margin-bottom: 6px;
+background: #f9d3e0;
+box-shadow:  5px 5px 10px #dbbac5,
+             -5px -5px 10px #ffecfb;}
+
+.neum2{border-radius: 50px;
+    padding: 4px;
+    margin-bottom: 6px;
+background: #f1c9fe;
+box-shadow:  5px 5px 10px #d4b1e0,
+             -5px -5px 10px #ffe1ff;}
+
+.neum3{
+    border-radius: 50px;
+    padding: 4px;
+    margin-bottom: 6px;
+    background: #d9cafe;
+    box-shadow:  5px 5px 10px #bfb2e0,
+             -5px -5px 10px #f3e2ff;
+}
+
+.neum1,neum2,neum3 p{font-size: 24px;}
+
+
+/*流れ星*/
+
+.star {
+    display: inline-block;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: #fff;
+    top: 100px;
+    left: 400px;
+    position: relative;
+    transform-origin: 100% 0;
+    animation: star-move 1s infinite ease-out;
+    animation-direction: normal;
+    opacity: 0;
+}
+.star:after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 2px;
+    border: 1px solid #f00;
+    border-width: 1px 150px 1px 150px;
+    border-color: transparent transparent transparent #fff;
+    transform: rotate(-45deg) translate3d(1px, -1px, 0);
+    transform-origin: 0% 100%;
+    animation: shooting 1s infinite ease-out;
+    animation-direction: normal;
+}
+
+.blue {
+    top: 100px;
+    left: 450px;
+    background: #4dabff;
+    animation-delay: 4.5s;
+}
+.blue:after {
+    border-color: transparent transparent transparent #4dabff;
+    animation-delay: 4.5s;
+}
+
+@-webkit-keyframes shooting {
+    50% {
+        transform: scale(1) rotate(-45deg) translate(0px, 0px);
+    }
+    100% {
+        transform: scale(0.5) rotate(-45deg) translate(0px, -1px);
+    }
+}
+@-webkit-keyframes star-move {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(0) translate3d(0, 0, 0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(0) translate3d(-100px, 100px, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1) rotate(0) translate3d(-200px, 200px, 0);
+    }
+}
+
+
+
+.star1 {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  width: 2px;
+  height: 2px;
+  background: blue;
+  border: 1px solid blue;
+  border-radius: 50%;
+  transform-origin: 100% 0;
+  animation: star-move1 1s infinite ease-out;
+  opacity: 0;
+}
+
+.star1:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: 3px;
+  border: 1px solid blue;
+  border-width: 2px 100px 2px 100px;
+  border-color: transparent transparent transparent blue;
+  transform-origin: 0 100%;
+  transform: scale(1) rotate(-135deg) translate3d(0, 0, 0);
+  animation: star-shooting1 1s infinite ease-out;
+}
+
+.red {
+    top: 80px;
+    left: 100px;
+    background: red;
+    animation-delay: 2.5s;
+}
+.red:after {
+    border-color: transparent transparent transparent red;
+    animation-delay: 2.5s;
+}
+
+@keyframes star-move1 {
+  0% {
+    transform: scale(0) rotate(0) translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(0) translate3d(100px, 100px, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0) translate3d(200px, 200px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes star-shooting1 {
+  0% {
+    transform: scale(0) rotate(-135deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1) rotate(-135deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(0.5) rotate(-135deg) translate3d(0, 0, 0);
+  }
+}
+
+/*------------------------------------------------ここからpc版のメニュー表示設定---------------------------------------------------------------*/
+
+@media (min-width:600px){
+    #works section {display: flex;}
+
+    #works img{width:50%;;height: auto;}
+
+    #works .text{;width: 40%;padding-left: 48px;}
+
+    .neum1,.neum2,.neum3{width:100%;height:auto}}
+
+    

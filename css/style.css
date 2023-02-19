@@ -1,0 +1,231 @@
+@charset "utf-8";
+/*↓全称セレクタで余白リセット*/
+*{margin:0;padding:0;}
+/*↑ここまで*/
+
+
+body{background-color:#fff8fe;
+    text-align: center;
+    font-family: 'PT Serif', serif;}
+
+
+
+
+nav ul li a{color:black;}
+
+nav ul li a:hover{color:white;
+                  font-size: 1.5em;
+                  transition: .6s;}
+
+nav ul :hover {cursor: pointer;
+/* hover後に色を変化させる指定 */
+/* hover後にメニューを囲うボーダーの指定 */
+        background-color:#BF788F;
+        opacity: .8;}
+
+
+
+
+/*--------------------------------------------------------------ヘッダー-----------------------------------------------*/
+
+/*------------------------------------------------------スマホメニューのナビ設定-----------------------------------------*/
+.sp-menu {
+  margin-left: auto;
+}
+
+/*---------------------------ハンバーガーメニュー基本設定---------------------------*/
+
+/*---------------------------ハンバーガーメニュー：開く前---------------------------*/
+.sp-menu #open {
+  font-size: 32px;
+  line-height: 64px;
+  cursor: pointer;
+}
+
+/*------------------------ハンバーガーメニュー：開いた後---------------------------*/
+.sp-menu #open.hide {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  padding: 88px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s; /*開くのに0.6sのスピードで動きをつける*/
+}
+
+.overlay.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay #close{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li {
+  margin-top: 24px;
+  opacity: 0;/*最初は消しておきたい*/
+  transform: translateY(16px);/*初期位置16px下に配置しておく*/
+  transition: opacity .3s, transform .3s;
+}
+
+.overlay.show li{
+    opacity: 1;/*.showがついたら表示されるようにしたい*/
+    transform: none;/*本来の位置に戻るように設定*/
+}
+
+.overlay.show li:nth-child(1){
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2){
+  transition-delay: .2s;
+}
+
+.overlay.show li:nth-child(3){
+  transition-delay: .3s;
+}
+
+.overlay.show li:nth-child(4){
+  transition-delay: .4s;
+}
+
+ruby{ruby-position:over;text-align:right;}
+
+rt{margin:10px;font-size:12px;text-align:right;}
+
+/*------------------------------------------------ここから自己紹介含むヘッダーの設定---------------------------------------------------------------*/
+
+header{padding: 8px 16px 0;
+         display:flex;}
+
+.logo img{font-size:24px;}}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 64px;
+}
+
+.top #target{margin-top: 8px;
+            padding: 16px;}
+
+.top{
+    background-image:url(../img/pastel-pink-background.png);
+        border: 4px;
+        border-color: #e6c0c0;
+        border-style: dotted;
+        border-radius: 8px;
+        margin-bottom: 8px;}
+
+
+.top img{width:260px;
+        height:260px; 
+        border-radius: 50%;
+        margin:32px auto;
+        cursor: pointer;
+    
+        transition: border-radius .5s;
+    }
+
+.changed{
+      border-radius: 0;
+    }
+
+
+/*------------------------------------------------ここからメインの設定---------------------------------------------------------------*/
+main{padding-bottom: 48px;
+     margin: 0 auto;}
+
+.myself section{width: 80%;
+                margin: 24px auto;
+                background-color: #dbc2c2;
+}
+
+.myself img{width: 80%;}
+
+section {
+    text-align: center;
+    box-shadow:0 0 10px 0 #ccc;
+    margin:0 auto;
+    padding:50px 10px;
+    width:40%;}
+
+section p{margin-top: 16px;
+          line-height: 1.8;
+        padding-top: 16px 16px 0;}
+
+section img{width:564px;height: auto;}
+
+
+
+h2 {padding-top: 64px;
+    font-weight: normal;
+    font-size: 24px;}
+
+h3 {font-weight: normal;
+    font-size: 20px;
+    margin: 16px 0 0;}
+
+
+
+.order{width: 100%;}
+
+
+/*フッターの設定*/
+footer{
+        border-top: 4px dotted #e6c0c0;
+        text-align: center;
+        padding: 64px 0;}
+
+small{font-size:14px;
+      color:#e6a1a1;}
+
+address{font-size:14px;
+        color:#e6a1a1;}
+
+address img{width: 48px; 
+            height: 48px;
+            margin: 16px 8px;/*本文一行分くらいのおおきさ*/}
+
+.pc-menu{display: none;}
+/*------------------------------------------------ここからpc版のメニュー表示設定---------------------------------------------------------------*/
+
+@media (min-width:600px){
+    .pc-menu{
+        display: block;
+        margin:8px auto 0;
+            }
+    .sp-menu{display: none;}
+    
+    .pc-menu ul{
+        list-style-type: none;
+        display: flex;
+        
+    }
+    
+    .pc-menu ul li a{
+        display: block;
+        width: 98px;
+        line-height: 64px;
+        text-align: center;
+        margin: 0 32px;
+    }
